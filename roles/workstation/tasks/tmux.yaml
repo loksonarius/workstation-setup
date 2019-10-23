@@ -1,0 +1,16 @@
+---
+- name: copy tmux config
+  copy:
+    dest: "{{ homedir }}/.tmux.conf"
+    src: ".tmux.conf"
+
+- name: install teamocil
+  gem:
+    name: teamocil
+    state: present
+    user_install: true
+
+- name: create teamocil dir
+  file:
+    path: "{{ homedir }}/.teamocil"
+    state: directory

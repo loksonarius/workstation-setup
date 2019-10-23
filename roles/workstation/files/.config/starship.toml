@@ -1,0 +1,39 @@
+add_newline = false
+prompt_order = [
+    "username",
+    "hostname",
+    "kubernetes",
+    "directory",
+    "git_branch",
+    "git_state",
+    "git_status",
+    "package",
+    "dotnet",
+    "golang",
+    "java",
+    "nodejs",
+    "python",
+    "ruby",
+    "rust",
+    # "nix_shell",
+    # "conda",
+    # "memory_usage",
+    # "aws",
+    # "env_var",
+    # "cmd_duration",
+    # "line_break",
+    # "jobs",
+    # "battery",
+    # "time",
+    # "character",
+]
+
+[kubernetes]
+symbol = "⛵ "
+disabled = false
+
+[hostname]
+ssh_only = false
+
+[username]
+show_always = true

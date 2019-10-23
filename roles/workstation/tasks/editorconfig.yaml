@@ -1,0 +1,5 @@
+---
+- name: copy over editorconfig dotfile
+  copy:
+    dest: "{{ homedir }}/.editorconfig"
+    src: .editorconfig

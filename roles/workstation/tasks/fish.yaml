@@ -1,0 +1,15 @@
+---
+- name: create fish config dir
+  file:
+    path: "{{ homedir }}/.config/fish"
+    state: directory
+
+- name: copy over fish config file
+  copy:
+    dest: "{{ homedir }}/.config/fish/config.fish"
+    src: ".config/fish/config.fish"
+
+- name: copy over fish completions
+  copy:
+    dest: "{{ homedir }}/.config/fish/completions"
+    src: ".config/fish/completions"

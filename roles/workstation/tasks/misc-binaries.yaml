@@ -1,0 +1,27 @@
+---
+- name: download binaries
+  get_url:
+    dest: "/tmp/{{ item.dest }}"
+    url: "{{ item.url }}"
+  with_items:
+    - dest: neko.tgz
+      url: "https://github.com/loksonarius/neko/releases/download/v0.2.0/neko-v0.2.0-x86_64-apple-darwin.tar.gz"
+    - dest: starship.tgz
+      url: "https://github.com/starship/starship/releases/download/v0.25.1/starship-x86_64-apple-darwin.tar.gz"
+
+- name: unpackage downloaded tars
+  unarchive:
+    dest: "/tmp"
+    src: "/tmp/{{ item }}"
+  with_items:
+    - neko.tgz
+    - starship.tgz
+
+- name: move donwloaded binaries into homedir bin
+  copy:
+    dest: "{{ homedir }}/.bin/{{ item }}"
+    src: "/tmp/{{ item }}"
+    mode: 0755
+  with_items:
+    - neko
+    - starship
