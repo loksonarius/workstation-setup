@@ -1,13 +1,49 @@
 # workstation-config
 
-_Ansible playbooks to configure my development machines_
+_Ansible playbooks to set up my development machines_
 
 ## Bootstrap
 
-Run `./bootstrap.sh` to install the tooling needed to kick off the configuration code.
+Run `./bootstrap.sh` to install the tooling needed to run the setup playbook.
 
-## Consuming
+## Running
 
-tl;dr: `ansible-playbook -i ansible_inventory configure.yaml`
+### tl;dr
+
+```bash
+source venv/bin/activate
+ansible-playbook setup.yaml
+```
+
+### Install Binaries
+
+```bash
+source venv/bin/activate
+ansible-playbook --tags install setup.yaml
+```
+
+### Configure Tooling
+
+```bash
+source venv/bin/activate
+ansible-playbook --tags configure setup.yaml
+```
+
+## Repo Layout
+
+```
+.
+├── LICENSE
+├── README.md
+├── ansible.cfg       # Just points to inventory file
+├── bootstrap.sh      # Run this to get Ansible ready to roll
+├── inventory         # Explicitly delcares and configures localhost inventory
+├── requirements.txt  # Requirements file for Ansible venv
+├── roles
+│   └── workstation   # Contains bulk of configuration code
+│       ├── tasks
+│       └── vars
+└── setup.yaml        # Entry point for configuration code
+```
 
 [:heart:](README.md)
