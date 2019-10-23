@@ -13,3 +13,16 @@
   copy:
     dest: "{{ homedir }}/.config/fish/completions"
     src: ".config/fish/completions"
+
+- name: add fish to system shells
+  become: true
+  lineinfile:
+    path: "/etc/shells"
+    line: "/usr/local/bin/fish"
+    regexp: "^\/usr\/local\/bin\/fish$"
+
+- name: set fish as default shell
+  become: true
+  user:
+    name: "{{ user }}"
+    shell: "/usr/local/bin/fish"

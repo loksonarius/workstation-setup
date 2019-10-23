@@ -35,7 +35,7 @@ ansible-playbook --tags configure setup.yaml
 .
 ├── LICENSE
 ├── README.md
-├── ansible.cfg       # Just points to inventory file
+├── ansible.cfg       # Configures options used by ansible-playbook
 ├── bootstrap.sh      # Run this to get Ansible ready to roll
 ├── inventory         # Explicitly delcares and configures localhost inventory
 ├── requirements.txt  # Requirements file for Ansible venv
