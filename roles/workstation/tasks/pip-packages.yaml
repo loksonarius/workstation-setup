@@ -1,9 +1,6 @@
 ---
 - name: install pip packages
   pip:
-    name: "{{ packages }}"
+    name: "{{ pip_packages }}"
     state: present
     executable: pip3
-  vars:
-    packages:
-      - howdoi

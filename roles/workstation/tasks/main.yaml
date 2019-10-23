@@ -13,8 +13,8 @@
 - name: configure
   block:
     - include: editorconfig.yaml
-    - include: neovim.yaml
     - include: fish.yaml
+    - include: neovim.yaml
     - include: starship.yaml
     - include: tmux.yaml
   tags:

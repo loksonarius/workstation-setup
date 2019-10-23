@@ -1,2 +1,30 @@
 ---
 homedir: "{{ lookup('env', 'HOME') }}"
+
+brew_taps:
+  - homebrew/cask-fonts
+
+brew_casks:
+  - discord
+  - firefox
+  - font-fira-code
+  - keepingyouawake
+  - kitty
+  - minikube
+  - slack
+  - steam
+  - vagrant
+  - virtualbox
+
+pip_packages:
+  - howdoi
+
+misc_binaries:
+  - name: neko
+    packaged: true
+    package_ext: .tgz
+    url: "https://github.com/loksonarius/neko/releases/download/v0.2.0/neko-v0.2.0-x86_64-apple-darwin.tar.gz"
+  - name: starship
+    packaged: true
+    package_ext: .tgz
+    url: "https://github.com/starship/starship/releases/download/v0.25.1/starship-x86_64-apple-darwin.tar.gz"

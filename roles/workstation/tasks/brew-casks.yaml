@@ -1,25 +1,10 @@
 ---
 - name: add custom homebrew taps
   homebrew_tap:
-    name: "{{ taps | join(',') }}"
+    name: "{{ brew_taps | join(',') }}"
     state: present
-  vars:
-    taps:
-      - homebrew/cask-fonts
 
 - name: install brew casks
   homebrew_cask:
-    name: "{{ casks }}"
+    name: "{{ brew_casks }}"
     state: present
-  vars:
-    casks:
-      - discord
-      - firefox
-      - font-fira-code
-      - keepingyouawake
-      - kitty
-      - minikube
-      - slack
-      - steam
-      - vagrant
-      - virtualbox

@@ -61,12 +61,10 @@ run the following to check for lint errors:
 
 ```bash
 # Lint Ansible
-ansible-lint setup.yaml
-ansible-lint roles/workstation
+ansible-lint setup.yaml roles/*
 
 # Lint YAML
-yamllint setup.yaml
-yamllint roles/workstation/**/*.yaml
+yamllint .
 ```
 
 [:heart:](README.md)
