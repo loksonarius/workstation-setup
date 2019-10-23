@@ -21,19 +21,22 @@ prompt_order = [
     # "aws",
     # "env_var",
     # "cmd_duration",
-    # "line_break",
     # "jobs",
     # "battery",
     # "time",
-    # "character",
+    "line_break",
+    "character",
 ]
+
+[hostname]
+ssh_only = false
 
 [kubernetes]
 symbol = "⛵ "
 disabled = false
 
-[hostname]
-ssh_only = false
+[line_break]
+disabled = false
 
 [username]
 show_always = true
