@@ -46,4 +46,27 @@ ansible-playbook --tags configure setup.yaml
 └── setup.yaml        # Entry point for configuration code
 ```
 
+## Iteration
+
+Testing changes for this repo should occur on a local dev machine. Currently,
+most of the configuration code is specific to OSX, so that's something to keep
+in mind if ever working on getting the workstation role to be OS-agnostic.
+
+To test changes, run the `setup.yaml` playbook as described in the above usage
+instructions and check to ensure whatever changes you made worked.
+
+Aditionally, the `requirements.txt` file will install `ansible-lint` and
+`yamllint` to the tools installed by pip into `venv`. Before committing code,
+run the following to check for lint errors:
+
+```bash
+# Lint Ansible
+ansible-lint setup.yaml
+ansible-lint roles/workstation
+
+# Lint YAML
+yamllint setup.yaml
+yamllint roles/workstation/**/*.yaml
+```
+
 [:heart:](README.md)
