@@ -1,0 +1,2 @@
+# Teamocil Completions
+complete -c teamocil -a (_fish_complete_path $HOME/.teamocil)

@@ -1,0 +1,21 @@
+---
+# These should run first
+- name: install
+  block:
+    - include: brew-packages.yaml
+    - include: brew-casks.yaml
+    - include: pip-packages.yaml
+    - include: misc-binaries.yaml
+  tags:
+    - install
+
+# These can run in any order afterwards
+- name: configure
+  block:
+    - include: editorconfig.yaml
+    - include: neovim.yaml
+    - include: fish.yaml
+    - include: starship.yaml
+    - include: tmux.yaml
+  tags:
+    - configure

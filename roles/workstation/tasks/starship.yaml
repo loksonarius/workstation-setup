@@ -1,0 +1,10 @@
+---
+- name: create starhip config dir
+  file:
+    path: "{{ homedir }}/.config"
+    state: directory
+
+- name: copy starship config
+  copy:
+    dest: "{{ homedir }}/.config/starship.toml"
+    src: ".config/starship.toml"
