@@ -41,8 +41,6 @@ ansible-playbook --tags configure setup.yaml
 ├── requirements.txt  # Requirements file for Ansible venv
 ├── roles
 │   └── workstation   # Contains bulk of configuration code
-│       ├── tasks
-│       └── vars
 └── setup.yaml        # Entry point for configuration code
 ```
 

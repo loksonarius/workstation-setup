@@ -2,11 +2,35 @@
 user: "{{ lookup('env', 'USER') }}"
 homedir: "{{ lookup('env', 'HOME') }}"
 
+brew_packages:
+  - autoconf
+  - avrdude
+  - chruby
+  - chruby-fish
+  - dfu-programmer
+  - editorconfig
+  - fish
+  - gnu-tar
+  - golang
+  - irssi
+  - jq
+  - kubernetes-cli
+  - kubernetes-helm
+  - neovim
+  - openssl
+  - ruby-install
+  - rustup-init
+  - telnet
+  - tmux
+  - tree
+  - wget
+
 brew_taps:
   - homebrew/cask-fonts
 
 brew_casks:
   - discord
+  - docker
   - firefox
   - font-fira-code
   - keepingyouawake

@@ -4,6 +4,11 @@
     name: "{{ brew_taps | join(',') }}"
     state: present
 
+- name: install brew packages
+  homebrew:
+    name: "{{ brew_packages }}"
+    state: present
+
 - name: install brew casks
   homebrew_cask:
     name: "{{ brew_casks }}"

@@ -2,9 +2,8 @@
 # These should run first
 - name: install
   block:
-    - include: brew-packages.yaml
-    - include: brew-casks.yaml
-    - include: pip-packages.yaml
+    - include: brew.yaml
+    - include: pip.yaml
     - include: misc-binaries.yaml
   tags:
     - install
