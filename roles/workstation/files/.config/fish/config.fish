@@ -6,7 +6,7 @@ source /usr/local/share/chruby/chruby.fish
 source /usr/local/share/chruby/auto.fish
 
 # GOPATH Setup
-set GOPATH $HOME/.go
+set -x GOPATH $HOME/.go
 set PATH $GOPATH/bin $PATH
 
 # Starship Prompt
