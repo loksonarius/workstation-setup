@@ -9,10 +9,10 @@
     dest: "{{ homedir }}/.config/fish/config.fish"
     src: ".config/fish/config.fish"
 
-- name: copy over fish completions
-  copy:
-    dest: "{{ homedir }}/.config/fish/completions"
-    src: ".config/fish/completions"
+- name: create fish completions directory
+  file:
+    path: "{{ homedir }}/.config/fish/completions"
+    state: directory
 
 - name: add fish to system shells
   become: true

@@ -14,3 +14,8 @@
   file:
     path: "{{ homedir }}/.teamocil"
     state: directory
+
+- name: create teamocil completions
+  copy:
+    dest: "{{ homedir }}/.config/fish/completions/teamocil.fish"
+    src: ".config/fish/completions/teamocil.fish"

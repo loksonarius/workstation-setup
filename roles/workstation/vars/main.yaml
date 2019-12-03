@@ -31,7 +31,6 @@ brew_taps:
 brew_casks:
   - discord
   - docker
-  - firefox
   - font-fira-code
   - keepingyouawake
   - kitty
