@@ -35,6 +35,7 @@ brew_casks:
   - keepingyouawake
   - kitty
   - minikube
+  - protonmail-bridge
   - slack
   - steam
   - vagrant
