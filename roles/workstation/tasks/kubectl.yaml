@@ -1,0 +1,50 @@
+---
+- name: create kubeconfig directory
+  file:
+    path: "{{ homedir }}/.kube"
+    state: directory
+
+- name: create temp krew directory
+  file:
+    path: "/tmp/krew"
+    state: directory
+
+- name: download krew release files
+  get_url:
+    dest: "/tmp/krew/{{ item }}"
+    url: "https://github.com/kubernetes-sigs/krew/releases/download/v0.3.3/{{ item }}"
+  with_items:
+    - krew.tar.gz
+    - krew.yaml
+
+- name: unpackage krew release
+  unarchive:
+    src: "/tmp/krew.tar.gz"
+    dest: "/tmp/krew"
+
+- name: run krew install steps
+  shell: |
+    /tmp/krew/krew-darwin_amd64 install \
+      --manifest=/tmp/krew.yaml \
+      --archive=/tmp/krew.tar.gz
+  args:
+    creates: "{{ homedir }}/.krew"
+
+- name: install krew plugins
+  shell: "krew install {{ item }}"
+  args:
+    creates: "{{ homedir }}/.krew/bin/kubectl-{{ item }}"
+  with_items:
+    - ctx
+    - konfig
+    - ns
+
+- name: install vim-plug plugin manager
+  get_url:
+    dest: "{{ homedir }}/.local/share/nvim/site//autoload/plug.vim"
+    url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+
+- name: copy neovim config
+  copy:
+    dest: "{{ homedir }}/.config/nvim/init.vim"
+    src: ".config/nvim/init.vim"

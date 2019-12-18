@@ -12,6 +12,9 @@ set PATH $GOPATH/bin $PATH
 # Cargo Bin Path
 set PATH $HOME/.cargo/bin $PATH
 
+# Krew Bin Path
+set PATH $HOME/.krew/bin $PATH
+
 # Starship Prompt
 eval (starship init fish)
 
