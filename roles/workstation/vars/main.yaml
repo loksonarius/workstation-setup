@@ -24,6 +24,7 @@ brew_packages:
   - telnet
   - tmux
   - tree
+  - watch
   - wget
 
 brew_taps:
@@ -33,8 +34,8 @@ brew_casks:
   - discord
   - docker
   - font-fira-code
+  - iterm2
   - keepingyouawake
-  - kitty
   - minikube
   - protonmail-bridge
   - slack
@@ -53,4 +54,4 @@ misc_binaries:
   - name: starship
     packaged: true
     package_ext: .tgz
-    url: "https://github.com/starship/starship/releases/download/v0.25.1/starship-x86_64-apple-darwin.tar.gz"
+    url: "https://github.com/starship/starship/releases/download/v0.32.2/starship-x86_64-apple-darwin.tar.gz"
