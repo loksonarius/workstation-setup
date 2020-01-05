@@ -3,6 +3,7 @@ user: "{{ lookup('env', 'USER') }}"
 homedir: "{{ lookup('env', 'HOME') }}"
 
 brew_packages:
+  - ack
   - autoconf
   - avrdude
   - chruby
