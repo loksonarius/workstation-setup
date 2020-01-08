@@ -21,6 +21,7 @@ brew_packages:
   - openssl
   - ruby-install
   - rustup-init
+  - shellcheck
   - telnet
   - tmux
   - tree
