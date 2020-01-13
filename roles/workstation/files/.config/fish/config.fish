@@ -21,6 +21,29 @@ eval (starship init fish)
 # Mask Vim with NeoVim
 alias vim="nvim"
 
+# Git Aliases
+alias g="git"
+
+alias gs="git status"
+alias ga="git add"
+alias gap="git add -p"
+alias gc="git commit"
+alias gcm="git commit -m"
+
+alias glo="git log"
+alias gt="git tag"
+alias gtd="git tag -d"
+
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gb="git branch"
+
+alias gl="git pull"
+alias gp="git push"
+
+alias gi="git init"
+alias gcl="git clone"
+
 # Tmux Helper Func for Making Teamocil Layouts
 alias tmux-layout='tmux list-windows -F "#{window_active} #{window_layout}" | grep "^1" | cut -d " " -f 2'
 
