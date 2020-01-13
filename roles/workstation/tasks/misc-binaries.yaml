@@ -1,14 +1,14 @@
 ---
 - name: download binaries
   get_url:
-    dest: "/tmp/{{ item.name }}{{ item.package_ext }}"
+    dest: "/tmp/{{ item.name }}{{ item.package_ext | d('') }}"
     url: "{{ item.url }}"
   with_items: "{{ misc_binaries }}"
 
 - name: unpackage downloaded archives
   unarchive:
     dest: "/tmp"
-    src: "/tmp/{{ item.name }}.tgz"
+    src: "/tmp/{{ item.name }}{{ item.package_ext }}"
   with_items: "{{ misc_binaries | selectattr('packaged') | list }}"
 
 - name: move donwloaded binaries into homedir bin

@@ -48,6 +48,9 @@ pip_packages:
   - howdoi
 
 misc_binaries:
+  - name: mdr
+    packaged: false
+    url: "https://github.com/MichaelMure/mdr/releases/download/v0.2.2/mdr_darwin_amd64"
   - name: neko
     packaged: true
     package_ext: .tgz
