@@ -1,17 +1,20 @@
 " Plugin installtions
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 Plug 'mileszs/ack.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'dense-analysis/ale'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 " Use system clipboard provider
 set clipboard+=unnamedplus
+
+" Use deoplete
+" let g:deoplete#enable_at_startup = 1
 
 " Show line numbers
 set number
@@ -68,3 +71,13 @@ let g:lightline = { 'colorscheme': 'solarized' }
 
 " Add directory change mapping to change dir to that of the current buffer
 nnoremap <leader>cd :cd %:p:h<CR>
+
+" Configure ALE plugin
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_linters = {
+\  'go': [ 'gofmt' ],
+\}
+let g:ale_fixers = {
+\  'go': [ 'gofmt', 'goimports'],
+\}
