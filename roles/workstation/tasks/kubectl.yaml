@@ -12,14 +12,14 @@
 - name: download krew release files
   get_url:
     dest: "/tmp/krew/{{ item }}"
-    url: "https://github.com/kubernetes-sigs/krew/releases/download/v0.3.3/{{ item }}"
+    url: "https://github.com/kubernetes-sigs/krew/releases/download/v0.3.4/{{ item }}"
   with_items:
     - krew.tar.gz
     - krew.yaml
 
 - name: unpackage krew release
   unarchive:
-    src: "/tmp/krew.tar.gz"
+    src: "/tmp/krew/krew.tar.gz"
     dest: "/tmp/krew"
 
 - name: run krew install steps
