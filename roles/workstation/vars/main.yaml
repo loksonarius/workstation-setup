@@ -4,6 +4,7 @@ homedir: "{{ lookup('env', 'HOME') }}"
 
 brew_packages:
   - ack
+  - arm-gcc-bin@8
   - autoconf
   - avrdude
   - chruby
@@ -19,6 +20,7 @@ brew_packages:
   - kubernetes-helm
   - neovim
   - openssl
+  - qmk
   - ruby-install
   - rustup-init
   - shellcheck
@@ -30,13 +32,17 @@ brew_packages:
 
 brew_taps:
   - homebrew/cask-fonts
+  - qmk/qmk
 
 brew_casks:
   - discord
   - docker
   - font-fira-code
+  - godot
   - iterm2
   - keepingyouawake
+  - keka
+  - logitech-options
   - minikube
   - protonmail-bridge
   - slack
@@ -50,7 +56,7 @@ pip_packages:
 misc_binaries:
   - name: mdr
     packaged: false
-    url: "https://github.com/MichaelMure/mdr/releases/download/v0.2.2/mdr_darwin_amd64"
+    url: "https://github.com/MichaelMure/mdr/releases/download/v0.2.5/mdr_darwin_amd64"
   - name: neko
     packaged: true
     package_ext: .tgz
@@ -58,4 +64,4 @@ misc_binaries:
   - name: starship
     packaged: true
     package_ext: .tgz
-    url: "https://github.com/starship/starship/releases/download/v0.32.2/starship-x86_64-apple-darwin.tar.gz"
+    url: "https://github.com/starship/starship/releases/download/v0.41.0/starship-x86_64-apple-darwin.tar.gz"
