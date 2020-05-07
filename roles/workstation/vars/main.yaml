@@ -52,6 +52,7 @@ brew_casks:
 
 pip_packages:
   - howdoi
+  - pynvim
 
 misc_binaries:
   - name: mdr

@@ -7,14 +7,12 @@ Plug 'mileszs/ack.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'dense-analysis/ale'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'dag/vim-fish'
 call plug#end()
 
 " Use system clipboard provider
 set clipboard+=unnamedplus
-
-" Use deoplete
-" let g:deoplete#enable_at_startup = 1
 
 " Show line numbers
 set number
@@ -72,12 +70,22 @@ let g:lightline = { 'colorscheme': 'solarized' }
 " Add directory change mapping to change dir to that of the current buffer
 nnoremap <leader>cd :cd %:p:h<CR>
 
+" Configure Deoplete
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('sources', { '_': ['ale']})
+
+set hidden
 " Configure ALE plugin
 let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
+let g:ale_rust_cargo_use_clippy = 1
 let g:ale_linters = {
 \  'go': [ 'gofmt' ],
+\  'python': [ 'pyls' ],
+\  'ruby': [ 'solargraph' ],
+\  'rust': [ 'cargo', 'rls' ],
 \}
 let g:ale_fixers = {
-\  'go': [ 'gofmt', 'goimports'],
+\  'go': [ 'gofmt', 'goimports' ],
+\  'rust': [ 'rustfmt' ],
 \}
