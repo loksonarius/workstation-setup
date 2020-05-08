@@ -18,6 +18,7 @@ brew_packages:
   - jq
   - kubernetes-cli
   - kubernetes-helm
+  - mdcat
   - neovim
   - openssl
   - qmk
@@ -55,9 +56,6 @@ pip_packages:
   - pynvim
 
 misc_binaries:
-  - name: mdr
-    packaged: false
-    url: "https://github.com/MichaelMure/mdr/releases/download/v0.2.5/mdr_darwin_amd64"
   - name: neko
     packaged: true
     package_ext: .tgz
