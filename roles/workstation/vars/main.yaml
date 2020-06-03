@@ -49,6 +49,7 @@ brew_casks:
   - logitech-options
   - protonmail-bridge
   - slack
+  - spotify
   - steam
   - vagrant
   - virtualbox
