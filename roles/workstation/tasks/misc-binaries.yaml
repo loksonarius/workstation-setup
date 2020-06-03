@@ -11,6 +11,11 @@
     src: "/tmp/{{ item.name }}{{ item.package_ext }}"
   with_items: "{{ misc_binaries | selectattr('packaged') | list }}"
 
+- name: ensure bin dir exists
+  file:
+    path: "{{ homedir }}/.bin"
+    state: directory
+
 - name: move donwloaded binaries into homedir bin
   copy:
     dest: "{{ homedir }}/.bin/{{ item.name }}"

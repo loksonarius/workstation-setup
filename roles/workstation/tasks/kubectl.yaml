@@ -25,13 +25,24 @@
 - name: run krew install steps
   shell: |
     /tmp/krew/krew-darwin_amd64 install \
-      --manifest=/tmp/krew.yaml \
-      --archive=/tmp/krew.tar.gz
+      --manifest=/tmp/krew/krew.yaml \
+      --archive=/tmp/krew/krew.tar.gz
   args:
     creates: "{{ homedir }}/.krew"
 
+- name: ensure bin dir exists
+  file:
+    path: "{{ homedir }}/.bin"
+    state: directory
+
+- name: move krew binary into homedir bin
+  copy:
+    dest: "{{ homedir }}/.bin/krew"
+    src: /tmp/krew/krew-darwin_amd64
+    mode: "0755"
+
 - name: install krew plugins
-  shell: "krew install {{ item }}"
+  shell: "/tmp/krew/krew-darwin_amd64 install {{ item }}"
   args:
     creates: "{{ homedir }}/.krew/bin/kubectl-{{ item }}"
   with_items:
