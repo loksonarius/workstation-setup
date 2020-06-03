@@ -51,7 +51,7 @@ brew_casks:
   - slack
   - steam
   - vagrant
- - virtualbox
+  - virtualbox
 
 pip_packages:
   - howdoi
