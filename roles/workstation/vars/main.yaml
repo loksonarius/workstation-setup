@@ -12,6 +12,7 @@ brew_packages:
   - dfu-programmer
   - editorconfig
   - fish
+  - git-lfs
   - gnu-tar
   - golang
   - irssi
