@@ -39,6 +39,7 @@ brew_taps:
   - qmk/qmk
 
 brew_casks:
+  - aerial
   - discord
   - docker
   - font-fira-code
