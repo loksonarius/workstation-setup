@@ -39,11 +39,13 @@ brew_taps:
   - qmk/qmk
 
 brew_casks:
+  - adoptopenjdk
   - aerial
   - discord
   - docker
   - font-fira-code
   - godot
+  - itch
   - iterm2
   - keepingyouawake
   - keka
