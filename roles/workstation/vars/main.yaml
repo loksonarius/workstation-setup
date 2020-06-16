@@ -44,7 +44,9 @@ brew_casks:
   - discord
   - docker
   - font-fira-code
+  - gifox
   - godot
+  - gog-galaxy
   - itch
   - iterm2
   - keepingyouawake
