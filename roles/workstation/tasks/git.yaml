@@ -1,0 +1,21 @@
+---
+- name: set global git name
+  git_config:
+    name: user.name
+    scope: global
+    value: "Dan Herrera"
+
+- name: set global git email
+  git_config:
+    name: user.name
+    scope: global
+    value: "sonarius@shew.io"
+
+- name: set global git ignore
+  git_config:
+    name: excludesfile
+    scope: global
+    value: "~/.gitignore"
+
+- name: init git lfs
+  shell: git lfs install

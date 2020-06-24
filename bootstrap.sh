@@ -7,9 +7,9 @@ set -e
 
 # Install brew
 brew_install_script="$(\
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install \
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh \
 )"
-/usr/bin/ruby -e "${brew_install_script}"
+/bin/bash -c "${brew_install_script}"
 
 # Install Python
 brew install python
