@@ -12,21 +12,8 @@ prompt_order = [
     "line_break",
     "directory",
     "git_branch",
-    "git_state",
-    "git_status",
     "line_break",
     "character",
-    # "username",
-    # "hostname",
-    # "nix_shell",
-    # "conda",
-    # "memory_usage",
-    # "aws",
-    # "env_var",
-    # "cmd_duration",
-    # "jobs",
-    # "battery",
-    # "time",
 ]
 
 [hostname]
