@@ -1,0 +1,5 @@
+---
+- name: copy ack config
+  copy:
+    dest: "{{ homedir }}/.ackrc"
+    src: ".ackrc"
