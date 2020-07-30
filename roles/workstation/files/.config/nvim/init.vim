@@ -25,6 +25,9 @@ set colorcolumn=+1
 set smartindent
 set autoindent
 
+" Don't line-wrap
+set nowrap
+
 " Use 2-space softtabs
 set tabstop=2
 set shiftwidth=2
