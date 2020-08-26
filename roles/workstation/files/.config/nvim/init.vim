@@ -6,9 +6,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'mileszs/ack.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'dense-analysis/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'dag/vim-fish'
+Plug 'lifepillar/vim-mucomplete'
 call plug#end()
 
 " Use system clipboard provider
@@ -21,12 +24,12 @@ set number
 set textwidth=80
 set colorcolumn=+1
 
+" Don't line-wrap
+set nowrap
+
 " Automatic indentation on
 set smartindent
 set autoindent
-
-" Don't line-wrap
-set nowrap
 
 " Use 2-space softtabs
 set tabstop=2
@@ -73,22 +76,27 @@ let g:lightline = { 'colorscheme': 'solarized' }
 " Add directory change mapping to change dir to that of the current buffer
 nnoremap <leader>cd :cd %:p:h<CR>
 
-" Configure Deoplete
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('sources', { '_': ['ale']})
+" Configure LSP Client
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rls'],
+    \ 'go': ['gopls'],
+    \ 'python': ['pyls'],
+    \ 'ruby': ['solargraph', 'stdio'],
+    \ }
 
-set hidden
-" Configure ALE plugin
-let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 0
-let g:ale_rust_cargo_use_clippy = 1
-let g:ale_linters = {
-\  'go': [ 'gofmt' ],
-\  'python': [ 'pyls' ],
-\  'ruby': [ 'solargraph' ],
-\  'rust': [ 'cargo', 'rls' ],
-\}
-let g:ale_fixers = {
-\  'go': [ 'gofmt', 'goimports' ],
-\  'rust': [ 'rustfmt' ],
-\}
+nmap <F5> <Plug>(lcn-menu)
+" Auto-format on save
+autocmd BufWritePre *.* :call LanguageClient#textDocument_formatting_sync()
+" Map bindings for LSP functions
+nmap <silent> <Plug>(lcn-hover)
+nmap <silent>d <Plug>(lcn-definition)
+nmap <silent>f <Plug>(lcn-format)
+nmap <silent>i <Plug>(lcn-implementation)
+nmap <silent>r <Plug>(lcn-rename)
+nmap <silent>t <Plug>(lcn-type-definition)
+nmap <silent>u <Plug>(lcn-references)
+
+" Configure MUcomplete
+set completeopt+=menuone
+set completeopt+=noinsert
+let g:mucomplete#enable_auto_at_startup = 1
