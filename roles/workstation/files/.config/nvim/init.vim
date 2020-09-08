@@ -17,8 +17,9 @@ call plug#end()
 " Use system clipboard provider
 set clipboard+=unnamedplus
 
-" Show line numbers
+" Show line numbers (absolute and relative)
 set number
+set relativenumber
 
 " Show 80 char line
 set textwidth=80
