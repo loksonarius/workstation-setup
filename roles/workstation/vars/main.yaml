@@ -13,6 +13,7 @@ brew_packages:
   - doctl
   - editorconfig
   - fish
+  - gh
   - git-lfs
   - gnu-tar
   - golang

@@ -18,6 +18,9 @@ set PATH $HOME/.krew/bin $PATH
 # Starship Prompt
 eval (starship init fish)
 
+# Github CLI Completion
+eval (gh completion -s fish)
+
 # Mask Vim with NeoVim
 alias vim="nvim"
 
