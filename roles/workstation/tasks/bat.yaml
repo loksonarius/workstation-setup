@@ -1,0 +1,11 @@
+
+---
+- name: create bat config dir
+  file:
+    path: "{{ homedir }}/.config"
+    state: directory
+
+- name: copy bat config
+  copy:
+    dest: "{{ homedir }}/.config/bat/config"
+    src: ".config/bat/config"

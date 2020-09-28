@@ -47,6 +47,7 @@ brew_casks:
   - discord
   - docker
   - font-fira-code
+  - font-fira-code-nerd-font
   - gifox
   - godot
   - gog-galaxy

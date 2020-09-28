@@ -1,0 +1,5 @@
+# highlighting theme
+--theme="Solarized (light)"
+
+# prevent line-wrapping
+--wrap="never"

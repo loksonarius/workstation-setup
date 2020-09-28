@@ -12,6 +12,7 @@
 - name: configure
   block:
     - include: ack.yaml
+    - include: bat.yaml
     - include: editorconfig.yaml
     - include: fish.yaml
     - include: kubectl.yaml
