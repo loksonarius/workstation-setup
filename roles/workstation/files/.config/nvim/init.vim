@@ -86,8 +86,6 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 nmap <F5> <Plug>(lcn-menu)
-" Auto-format on save
-autocmd BufWritePre *.* :call LanguageClient#textDocument_formatting_sync()
 " Map bindings for LSP functions
 nmap <silent> <Plug>(lcn-hover)
 nmap <silent>d <Plug>(lcn-definition)

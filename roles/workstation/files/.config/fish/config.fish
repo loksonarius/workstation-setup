@@ -24,6 +24,9 @@ eval (gh completion -s fish)
 # Mask Vim with NeoVim
 alias vim="nvim"
 
+# Mask ls with lsd
+alias ls="lsd"
+
 # Git Aliases
 alias g="git"
 

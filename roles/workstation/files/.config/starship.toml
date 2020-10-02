@@ -1,20 +1,19 @@
 add_newline = false
-prompt_order = [
-    "package",
-    "dotnet",
-    "golang",
-    "java",
-    "nodejs",
-    "python",
-    "ruby",
-    "rust",
-    "kubernetes",
-    "line_break",
-    "directory",
-    "git_branch",
-    "line_break",
-    "character",
-]
+format = """\
+    $package\
+    $dotnet\
+    $golang\
+    $java\
+    $nodejs\
+    $python\
+    $ruby\
+    $rust\
+    $kubernetes\
+    $directory\
+    $git_branch\
+    $line_break\
+    $character\
+"""
 
 [hostname]
 ssh_only = false

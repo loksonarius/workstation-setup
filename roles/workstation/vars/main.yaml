@@ -7,11 +7,13 @@ brew_packages:
   - arm-gcc-bin@8
   - autoconf
   - avrdude
+  - bat
   - chruby
   - chruby-fish
   - dfu-programmer
   - doctl
   - editorconfig
+  - fd
   - fish
   - gh
   - git-lfs
@@ -21,6 +23,7 @@ brew_packages:
   - jq
   - kubernetes-cli
   - kubernetes-helm
+  - lsd
   - mdcat
   - neovim
   - openssl
@@ -28,6 +31,7 @@ brew_packages:
   - ruby-install
   - rustup-init
   - shellcheck
+  - starship
   - telnet
   - tmux
   - tree
@@ -71,7 +75,3 @@ misc_binaries:
     packaged: true
     package_ext: .tgz
     url: "https://github.com/loksonarius/neko/releases/download/v0.2.0/neko-v0.2.0-x86_64-apple-darwin.tar.gz"
-  - name: starship
-    packaged: true
-    package_ext: .tgz
-    url: "https://github.com/starship/starship/releases/download/v0.41.0/starship-x86_64-apple-darwin.tar.gz"
