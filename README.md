@@ -65,4 +65,25 @@ ansible-lint setup.yaml roles/*
 yamllint .
 ```
 
+## Upgrading
+
+Mildly destructive, but if you're looking to upgrade the `ansible` version being
+used by this repo, try:
+
+```bash
+# delete the current venv on disk
+rm -rf venv
+
+# create a new venv with a fresh pip installation
+python3 -m venv --prompt workstation-venv venv
+source venv/bin/activate
+pip install --upgrade pip
+
+# install the project dependencies
+pip install ansible yamllint
+
+# freeze the newly set dependency versions
+pip freeze > requirements.txt
+```
+
 [:heart:](README.md)
