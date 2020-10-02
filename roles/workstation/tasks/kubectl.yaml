@@ -12,21 +12,16 @@
 - name: download krew release files
   get_url:
     dest: "/tmp/krew/{{ item }}"
-    url: "https://github.com/kubernetes-sigs/krew/releases/download/v0.3.4/{{ item }}"
-  with_items:
-    - krew.tar.gz
-    - krew.yaml
+    url: "https://github.com/kubernetes-sigs/krew/releases/latest/download/krew.tar.gz"
 
 - name: unpackage krew release
   unarchive:
     src: "/tmp/krew/krew.tar.gz"
     dest: "/tmp/krew"
 
-- name: run krew install steps
+- name: run krew install step
   shell: |
-    /tmp/krew/krew-darwin_amd64 install \
-      --manifest=/tmp/krew/krew.yaml \
-      --archive=/tmp/krew/krew.tar.gz
+    /tmp/krew/krew-darwin_amd64 install
   args:
     creates: "{{ homedir }}/.krew"
 
