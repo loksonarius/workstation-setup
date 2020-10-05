@@ -16,10 +16,8 @@ format = """\
     $ruby\
     $rust\
 
-    \t\
     $kubernetes\
 
-    \t\
     $git_branch\
     $line_break\
 
