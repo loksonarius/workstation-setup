@@ -1,5 +1,12 @@
-add_newline = false
+###############
+# Prompt-Wide #
+###############
+
+add_newline = true
+
 format = """\
+    $time($cmd_duration)$line_break\
+
     $package\
     $dotnet\
     $golang\
@@ -8,22 +15,97 @@ format = """\
     $python\
     $ruby\
     $rust\
+
+    \t\
     $kubernetes\
-    $directory\
+
+    \t\
     $git_branch\
     $line_break\
+
+    $directory\
     $character\
 """
 
-[hostname]
-ssh_only = false
+#############
+# Debugging #
+#############
 
-[kubernetes]
-symbol = "⛵ "
+[cmd_duration]
+format = " [\\(祥$duration\\)]($style)"
+min_time = "10_000"
+style = "bold"
+
+[time]
+format = "[ $time]($style)"
+style = "bold"
 disabled = false
+
+##############
+# Formatting #
+##############
 
 [line_break]
 disabled = false
 
-[username]
-show_always = true
+#############
+# Languages #
+#############
+
+[package]
+format = "[\\[$symbol $version\\]]($style)"
+style = "black bold dimmed"
+symbol = ""
+
+[dotnet]
+format = "[\\[$symbol $version\\]]($style)"
+style = "cyan dimmed"
+symbol = ""
+
+[golang]
+format = "[\\[$symbol $version\\]]($style)"
+style = "blue dimmed"
+symbol = ""
+
+[java]
+format = "[\\[$symbol $version\\]]($style)"
+style = "yellow dimmed"
+symbol = ""
+
+[nodejs]
+format = "[\\[$symbol $version\\]]($style)"
+style = "green dimmed"
+symbol = ""
+
+[python]
+format = "[\\[$symbol $version\\]]($style)"
+style = "yellow dimmed"
+symbol = ""
+
+[ruby]
+format = "[\\[$symbol $version\\]]($style)"
+style = "red dimmed"
+symbol = ""
+
+[rust]
+format = "[\\[$symbol $version\\]]($style)"
+style = "red dimmed"
+symbol = ""
+
+###########
+# Context #
+###########
+
+[kubernetes]
+disabled = false
+format = "[\\($symbol $context(|$namespace)\\)]($style)"
+style = "cyan dimmed"
+symbol = "☸"
+
+[git_branch]
+format = "[\\($symbol $branch\\)]($style)"
+symbol = ""
+
+[directory]
+format = "[ $path]($style)([$read_only]($read_only_style)) "
+style = "bold"
