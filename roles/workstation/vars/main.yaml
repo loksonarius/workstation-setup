@@ -16,6 +16,7 @@ brew_packages:
   - fd
   - fish
   - gh
+  - git-delta
   - git-lfs
   - gnu-tar
   - golang

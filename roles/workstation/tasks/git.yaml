@@ -17,5 +17,29 @@
     scope: global
     value: "~/.gitignore"
 
+- name: set git editor
+  git_config:
+    name: core.editor
+    scope: global
+    value: "nvim"
+
+- name: set diff pager
+  git_config:
+    name: core.pager
+    scope: global
+    value: "delta"
+
+- name: set diff theme
+  git_config:
+    name: delta.syntax-theme
+    scope: global
+    value: "Solarized (light)"
+
+- name: set diff layout
+  git_config:
+    name: delta.side-by-side
+    scope: global
+    value: true
+
 - name: init git lfs
   shell: git lfs install
