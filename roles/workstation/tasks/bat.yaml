@@ -2,7 +2,7 @@
 ---
 - name: create bat config dir
   file:
-    path: "{{ homedir }}/.config"
+    path: "{{ homedir }}/.config/bat"
     state: directory
 
 - name: copy bat config
