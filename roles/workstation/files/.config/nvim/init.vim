@@ -12,6 +12,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'dag/vim-fish'
 Plug 'lifepillar/vim-mucomplete'
+Plug 'tveskag/nvim-blame-line'
 call plug#end()
 
 " Use system clipboard provider
@@ -77,17 +78,26 @@ let g:lightline = { 'colorscheme': 'solarized' }
 " Add directory change mapping to change dir to that of the current buffer
 nnoremap <leader>cd :cd %:p:h<CR>
 
+" Map binding to display git blame
+nmap <silent>b :SingleBlameLine<CR>
+
 " Configure LSP Client
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rls'],
-    \ 'go': ['gopls'],
+    \ 'go': {
+    \   'name': 'gopls',
+    \   'command': ['gopls'],
+    \   'initializationOptions': {
+    \     'directoryFilters': ['-docode/src/do/teams','+docode/src/do/teams/delivery'],
+    \   },
+    \ },
     \ 'python': ['pyls'],
     \ 'ruby': ['solargraph', 'stdio'],
     \ }
 
 nmap <F5> <Plug>(lcn-menu)
 " Auto-format on save
-autocmd BufWritePre *.* :call LanguageClient#textDocument_formatting_sync()
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 " Map bindings for LSP functions
 nmap <silent> <Plug>(lcn-hover)
 nmap <silent>d <Plug>(lcn-definition)
