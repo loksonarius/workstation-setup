@@ -25,19 +25,27 @@ brew_packages:
   - kubernetes-cli
   - kubernetes-helm
   - lsd
+  - lua-language-server
   - mdcat
   - neovim
+  - node
   - openssl
+  - prettier
+  - pyright
   - qmk
+  - ripgrep
   - ruby-install
+  - rust-analyzer
   - rustup-init
   - shellcheck
   - starship
   - telnet
   - tmux
   - tree
+  - universal-ctags
   - watch
   - wget
+  - yarn
 
 brew_taps:
   - homebrew/cask-drivers
@@ -61,15 +69,20 @@ brew_casks:
   - keepingyouawake
   - keka
   - logitech-options
+  - logitech-options
+  - logitech-g-hub
   - protonmail-bridge
-  - spotify
   - steam
-  - vagrant
 
 pip_packages:
   - howdoi
   - pynvim
   - neovim
+
+npm_packages:
+  - vscode-langservers-extracted
+  - dockerfile-language-server-nodejs
+  - "@ansible/ansible-language-server"
 
 misc_binaries:
   - name: neko

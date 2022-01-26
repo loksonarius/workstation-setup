@@ -1,26 +1,11 @@
 ---
-- name: create neovim temp file dirs
-  file:
-    path: "{{ homedir }}/.config/nvim/tmp/{{ item }}"
-    state: directory
-    recurse: true
-  with_items:
-    - backup
-    - swap
-    - undo
-
-- name: create neovim plugin dirs
-  file:
-    path: "{{ homedir }}/.local/share/nvim/site/autoload"
-    state: directory
-    recurse: true
-
-- name: install vim-plug plugin manager
-  get_url:
-    dest: "{{ homedir }}/.local/share/nvim/site//autoload/plug.vim"
-    url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-
 - name: copy neovim config
   copy:
-    dest: "{{ homedir }}/.config/nvim/init.vim"
-    src: ".config/nvim/init.vim"
+    dest: "{{ homedir }}/.config/nvim/init.lua"
+    src: ".config/nvim/init.lua"
+    mode: "0644"
+
+- name: install nvim plugins
+  command:
+    cmd: "nvim +PackerInstall +qa"
+    creates: "{{ homedir }}/.local/share/nvim/site/pack/packer/start/packer.nvim"

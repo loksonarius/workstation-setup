@@ -11,4 +11,4 @@ rules:
     ignore: |
       roles/workstation/vars/*.yaml
   octal-values: enable
-  quoted-strings: enable
+  quoted-strings: disable

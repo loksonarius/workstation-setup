@@ -4,6 +4,7 @@
   block:
     - include: brew.yaml
     - include: pip.yaml
+    - include: npm.yaml
     - include: misc-binaries.yaml
   tags:
     - install
