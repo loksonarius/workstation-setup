@@ -1,5 +1,5 @@
 # highlighting theme
---theme="Solarized (light)"
+--theme="OneHalfDark"
 
 # prevent line-wrapping
 --wrap="never"
