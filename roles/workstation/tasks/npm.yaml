@@ -1,0 +1,7 @@
+---
+- name: install npm packages
+  pip:
+    name: "{{ item }}"
+    global: true
+    state: present
+  with_items: "{{ npm_packages }}"
